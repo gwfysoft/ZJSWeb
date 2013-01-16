@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="doctor" namespace="/doctor" extends="json-default">
+
+
+		<!-- 添加医师 -->
+		<action name="add" class="doctorAction" method="addDoctor">
+			<result name="success" type="json"/>
+			<result name="input">/doctor/doctorAdd.jsp</result>
+		</action>
+
+		<!-- 删除医师 -->
+		<action name="delete" class="doctorAction" method="deleteDoctor">
+			<result name="success" type="json"/>
+		</action>
+
+		<action name="prepareUpdate" class="doctorAction" method="prepareUpdate">
+			<result name="success">
+			/doctor/doctorEdit.jsp
+			</result>
+		</action>
+		<action name="update" class="doctorAction" method="update">
+			<result name="success"  type="redirect">
+			/doctor/doctor.jsp
+			</result>
+		</action>
+		<action name="active" class="doctorAction" method="activeDoctor">
+			<result name="success"  type="json">
+			</result>
+		</action>
+	</package>
+</struts>

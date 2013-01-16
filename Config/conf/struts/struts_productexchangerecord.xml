@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="productexchangerecord" namespace="/productexchangerecord" extends="json-default">
+		<action name="add" class="productExchangeRecordAction" method="addProductExchangeRecord">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+	<package name="productexchange" namespace="/productexchange" extends="json-default">
+		<action name="addAndUpdateProductExchangePeriod" class="productExchangePeriodAction" method="addAndUpdateProductExchangePeriod">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="deleteProductExchangePeriod" class="productExchangePeriodAction" method="deleteProductExchangePeriod">
+			<result name="success" type="json"/>
+		</action>
+	</package>
+</struts>

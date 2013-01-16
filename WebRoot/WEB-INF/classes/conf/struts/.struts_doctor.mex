@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="doctor" location="228,10" size="280,455">
+    <action name="add" location="65,47" size="150,62">
+      <result name="success" />
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="doctorAdd.jsp" />
+      </result>
+    </action>
+    <action name="delete" location="65,162" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="prepareUpdate" location="65,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="doctorEdit.jsp" />
+      </result>
+    </action>
+    <action name="update" location="65,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="doctor.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="doctorAdd.jsp" path="/doctor/doctorAdd.jsp" location="10,30" size="150,55" />
+  <webResource name="doctorEdit.jsp" path="/doctor/doctorEdit.jsp" location="11,240" size="150,55" />
+  <webResource name="doctor.jsp" path="/doctor/doctor.jsp" location="547,345" size="150,55" />
+</Struts2Diagram>
+

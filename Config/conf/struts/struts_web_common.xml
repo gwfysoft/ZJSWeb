@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="userAction" class="com.jung.user.action.UserAction" singleton="false"/>
+	<bean id="doctorAction" class="com.jung.doctor.action.DoctorAction" singleton="false"/>
+	<bean id="employeeAction" class="com.jung.employee.action.EmployeeAction" singleton="false"/>
+	<bean id="userCompetenceAction" class="com.jung.competence.action.UserCompetenceAction" singleton="false"></bean>
+	<bean id="regionAction" class="com.jung.region.action.RegionAction" singleton="false"/>
+	<bean id="adminAction" class="com.jung.admin.action.AdminAction" singleton="false"/>
+	<bean id="newsAction" class="com.jung.news.action.NewsAction" singleton="false"/>
+	<bean id="questionAction" class="com.jung.question.action.QuestionAction" singleton="false"/>
+	<bean id="questionAnswerRecordAction" class="com.jung.questionanswerrecord.action.QuestionAnswerRecordAction" singleton="false"/>
+	<bean id="productAction" class="com.jung.product.action.ProductAction" singleton="false"/>
+	<bean id="productExchangeRecordAction" class="com.jung.productexchangerecord.action.ProductExchangeRecordAction" singleton="false"/>
+	<bean id="productExchangePeriodAction" class="com.jung.productexchangerecord.action.ProductExchangePeriodAction" singleton="false"/>
+	<bean id="uploadImageAction" class="com.jung.common.UploadImageAction" singleton="false"/>
+	
+	<bean id="jqueryGridServiceFactory" class="com.jung.common.JqueryGridServiceFactory">
+		<property name="jqueryGridServices">
+			<list>
+					<ref bean="productExchangeRecordService"></ref>
+					<ref bean="productService"></ref>
+					<ref bean="questionAnswerRecordService"></ref>
+					<ref bean="questionService"></ref>
+					<ref bean="adminService"></ref>
+					<ref bean="newsService"></ref>
+					<ref bean="doctorService"></ref>
+					<ref bean="employeeService"></ref>
+					<ref bean="userCompetenceService"></ref>
+					<ref bean="roleForUserService"></ref>
+					<ref bean="regionService"></ref>
+					<ref bean="productExchangePeriodService"></ref>
+			</list>
+		</property>
+	</bean>
+	<bean id="jqueryGridAction" class="com.jung.common.JqueryGridAction"
+		singleton="false">
+		<property name="factory" ref="jqueryGridServiceFactory" />
+	</bean>
+</beans>

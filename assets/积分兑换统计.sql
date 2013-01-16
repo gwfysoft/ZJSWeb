@@ -1,0 +1,1 @@
+select region.regionID,region.* from  (SELECT regionID,regionName,parentID from Region as rgn inner join Doctor as dor on   rgn.regionID=dor.hospitalID) as region
